@@ -81,9 +81,17 @@ WSGI_APPLICATION = "questions.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    # "default": {
+    #     "ENGINE": "django.db.backends.sqlite3",
+    #     "NAME": BASE_DIR / "db.sqlite3",
+    # }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'questions_pg',
+        'USER': 'questions_pg_user',
+        'PASSWORD': 'TqO5hw1cydlj1bTkY74SWlh8Ktd8k0pS',
+        'HOST': 'dpg-ct007ulumphs73eumj20-a',
+        'PORT': '5432'
     }
 }
 
