@@ -96,7 +96,7 @@ DATABASES = {
     # }
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgresql://questions_pg_user:TqO5hw1cydlj1bTkY74SWlh8Ktd8k0pS@dpg-ct007ulumphs73eumj20-a/questions_pg',
+        default='postgresql://questions_pg_user:TqO5hw1cydlj1bTkY74SWlh8Ktd8k0pS@dpg-ct007ulumphs73eumj20-a.frankfurt-postgres.render.com/questions_pg',
         conn_max_age=600
     )
 }
