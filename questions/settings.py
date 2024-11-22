@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -85,14 +86,19 @@ DATABASES = {
     #     "ENGINE": "django.db.backends.sqlite3",
     #     "NAME": BASE_DIR / "db.sqlite3",
     # }
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'questions_pg',
-        'USER': 'questions_pg_user',
-        'PASSWORD': 'TqO5hw1cydlj1bTkY74SWlh8Ktd8k0pS',
-        'HOST': 'dpg-ct007ulumphs73eumj20-a',
-        'PORT': '5432'
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'questions_pg',
+    #     'USER': 'questions_pg_user',
+    #     'PASSWORD': 'TqO5hw1cydlj1bTkY74SWlh8Ktd8k0pS',
+    #     'HOST': 'dpg-ct007ulumphs73eumj20-a',
+    #     'PORT': '5432'
+    # }
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default='postgresql://questions_pg_user:TqO5hw1cydlj1bTkY74SWlh8Ktd8k0pS@dpg-ct007ulumphs73eumj20-a/questions_pg',
+        conn_max_age=600
+    )
 }
 
 # DATABASES = {
