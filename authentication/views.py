@@ -8,6 +8,9 @@ from .models import *
 
 def login_page(request):
     # Check if the HTTP request method is POST (form submission)
+    if request.user.is_authenticated:
+        return redirect('/list/')
+
     if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -23,6 +26,6 @@ def login_page(request):
             return redirect('/login/')
         else:
             login(request, user)
-            return redirect('/home/')
+            return redirect('/list/')
 
     return render(request, 'authentication/login.html')

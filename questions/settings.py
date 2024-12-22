@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-_t6f_s(335t7o_j%5pqb(@yt87(x8f*m)n0d31=#yb-pb6%qyf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['questions-o9ri.onrender.com']
+ALLOWED_HOSTS = ['questions-o9ri.onrender.com', '127.0.0.1']
 
 
 # Application definition
@@ -82,35 +82,11 @@ WSGI_APPLICATION = "questions.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    # "default": {
-    #     "ENGINE": "django.db.backends.sqlite3",
-    #     "NAME": BASE_DIR / "db.sqlite3",
-    # }
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'questions_pg',
-    #     'USER': 'questions_pg_user',
-    #     'PASSWORD': 'TqO5hw1cydlj1bTkY74SWlh8Ktd8k0pS',
-    #     'HOST': 'dpg-ct007ulumphs73eumj20-a',
-    #     'PORT': '5432'
-    # }
     'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://questions_pg_user:TqO5hw1cydlj1bTkY74SWlh8Ktd8k0pS@dpg-ct007ulumphs73eumj20-a.frankfurt-postgres.render.com/questions_pg',
+        default='RENDER_POSTGRES_CONNECTION_STRING',
         conn_max_age=600
     )
 }
-
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "OPTIONS": {
-#             "service": "questions",
-#             "passfile": ".my_pgpass",
-#         },
-#     }
-# }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
